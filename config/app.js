@@ -1,7 +1,5 @@
 var express = require('express');
 var path = require('path');
-var lessMiddleware = require('less-middleware');
-var jwt = require('jwt-simple');
 var passport = require('passport')
 
 // CORS

@@ -1,12 +1,31 @@
 {
-  "name": "application-name",
+  "name": "Annotorious",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node main.js"
   },
   "dependencies": {
-    "express": "3.2.5",
-    "ejs": "*"
+    "express": "~3.2.5",
+    "ejs": "*",
+    "mongoose": "~3.6.13",
+    "passport": "~0.1.17"
+  },
+  "gitHead": "8d9a3cb163bd23b14617beacc6bdfbda6fdaaec9",
+  "description": "Literature Annotator",
+  "main": "main.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bgando/Annotorious.git"
+  },
+  "keywords": [
+    "annotator",
+    "openshakespeare"
+  ],
+  "author": "Bianca Gandolfo",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/bgando/Annotorious/issues"
   }
 }
