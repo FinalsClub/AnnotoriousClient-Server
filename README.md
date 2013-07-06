@@ -4,6 +4,8 @@ AnnotoriousClient-Server
 
 Client and Server-side code for Annotorious
 
+Annotorious is a collaborative open-source annotation application for Shakespeare's texts. It includes 3600 annotations and 37 works of Shakespeare.
+
 Dependencies
 --
 1. OpenShakespeareData: https://github.com/bgando/OpenShakespeareData 
