@@ -1,6 +1,8 @@
 var express = require('express');
 var path = require('path');
-var passport = require('passport')
+var passport = require('passport');
+var stylus = require('stylus');
+var nib = require('nib');
 
 // CORS
 var allowCrossDomain = function(req, res, next) {
@@ -22,19 +24,28 @@ var allowCrossDomain = function(req, res, next) {
 module.exports = function(app) {
   // Configuration for all environments
   app.set('port', process.env.PORT || 3000);
+  app.use(express.favicon());
+  app.use(express.logger('dev'));
   app.set('views', path.join(__dirname, '..', 'views'));
   app.engine('html', require('ejs').renderFile);
   app.use(passport.initialize());
-  app.use(express.favicon());
-  app.use(express.logger('dev'));
   app.use(allowCrossDomain);
   app.use(express.bodyParser());
   app.use(express.cookieParser('SecretAgentShakespeare'));
   app.use(express.session());
   app.use(app.router);
+  app.use(stylus.middleware({
+    src: path.join(__dirname, '../views/styles'),
+    dest: path.join(__dirname, '../public'),
+    compile: function compile(str, path) {
+      return stylus(str)
+       .set('filename', path)
+       .set('compress', true)
+       .use(nib())
+       .import('nib');
+    }
+  }));
   app.use(express.static(path.join(__dirname, '..', 'public')));
-
-  
 
   // Development configuration
   if (app.get('env') === 'development') {

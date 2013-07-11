@@ -1,4 +1,5 @@
 var WorksView = Backbone.View.extend({
+  tagName: 'nav',
 
   render: function() {
     this.addAll();

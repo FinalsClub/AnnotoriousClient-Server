@@ -8,8 +8,12 @@ var AppView = Backbone.View.extend({
     this.works.fetch({
       //renders side nav-bar
       success: function(){
-        self.worksView = new WorksView({collection: self.works});
-        $('#play-nav').append(self.worksView.render().el);
+        self.worksView = new WorksView({
+          collection: self.works,
+          el: $('#play-nav')
+        });
+        
+        self.worksView.render();
       },
       error: function(rsp) {
         console.log('Error:',rsp);
