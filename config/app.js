@@ -53,6 +53,6 @@ module.exports = function(app) {
     app.use(express.errorHandler());
   }
   else if (app.get('env') === 'production') {
-    app.set('db', 'open_shakespeare-prod');
+    app.set('db', process.env[MONGOLAB_URI]);
   }
 };

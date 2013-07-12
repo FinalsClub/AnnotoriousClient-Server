@@ -12,7 +12,6 @@ module.exports = function(app) {
   //     realm: 'http://localhost:3000/'
   //   },
   //   function(identifier, profile, done) {
-  //     console.log(indentifier);
   //     User.findOrCreate({ openId: identifier, firstname: profile.name.givenName, lastname: profile.name.familyName}).done(done);
   //   }
   // ));

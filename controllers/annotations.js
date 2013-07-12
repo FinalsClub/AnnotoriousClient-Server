@@ -13,7 +13,6 @@ module.exports = {
 
     query.exec(function (err, annotations) {
         if (!err) {
-          console.log(annotations);
         return res.send({'rows': annotations });
       } 
       else {
@@ -44,7 +43,6 @@ module.exports = {
 
 	addAnnotation: function (req, res) {
     var annotation;
-    console.log("POST: ");
     annotation = new Annotation({
       user: "user",
       username: "username",
@@ -84,7 +82,6 @@ module.exports = {
 
       return annotation.save(function (err) {
        if (!err) {
-         console.log("updated");
        } else {
          console.log(err);
        }
@@ -97,7 +94,6 @@ module.exports = {
      return Annotation.findById(req.params._id, function (err, annotation) {
       return annotation.remove(function (err) {
         if (!err) {
-          console.log("removed");
           return res.send('');
         } else {
           console.log(err);

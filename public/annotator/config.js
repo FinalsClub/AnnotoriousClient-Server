@@ -25,7 +25,7 @@ $(function() {
     // eg. /store/endpoint/search?limit=20&uri=http://this/document/only
     loadFromSearch: {
       uri: location.pathname+''+location.hash,
-      'limit': 100,
+      'limit': 1000,
     }
   });
 });

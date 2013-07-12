@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 module.exports = function(app) {
   // Connect to the database
-  mongoose.connect('mongodb://localhost/'+app.set('db'));
+  mongoose.connect(app.get('db'));
 
   // Register models
   mongoose.model('Play', require('../schemas/Play'));
