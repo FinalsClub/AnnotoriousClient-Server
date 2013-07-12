@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 module.exports = function(app) {
   // Connect to the database
-  mongoose.connect(app.get('db'));
+  mongoose.connect(process.env('MONGOLAB_URI'));
 
   // Register models
   mongoose.model('Play', require('../schemas/Play'));
