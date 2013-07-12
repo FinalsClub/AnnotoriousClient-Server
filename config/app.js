@@ -53,6 +53,6 @@ module.exports = function(app) {
     app.use(express.errorHandler());
   }
   else if (app.get('env') === 'production') {
-    app.set('db', process.env[MONGOLAB_URI]);
+    app.set('db', process.env.MONGOLAB_URI);
   }
 };
