@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 module.exports = function(app) {
   // Connect to the database
-  mongoose.connect('mongodb://localhost:27017/open_shakespeare', function (err, res) {
+  mongoose.connect(app.get('db'), function (err, res) {
     if (err) { 
     console.log ('ERROR connecting to: ' + app.get('db') + '. ' + err);
     } else {
