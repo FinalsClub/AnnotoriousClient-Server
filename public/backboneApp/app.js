@@ -15,9 +15,7 @@ var AppView = Backbone.View.extend({
         
         self.worksView.render();
       },
-      error: function(rsp) {
-        console.log('Error:',rsp);
-      }
+      error: function(rsp) { console.log('Error:',rsp); }
     });
 
     this.workView = new WorkView({

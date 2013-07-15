@@ -17,7 +17,6 @@ var WorkView = Backbone.View.extend({
     var self = this;
     this.model.fetch({
       success: function(model, response, options) {
-        console.log(self.model);
         $('#play-nav a[data-id='+self.model.id+']').addClass('selected').siblings().removeClass('selected');
         self.$el.html(self.templateWork(model.toJSON()));
       },
@@ -26,7 +25,6 @@ var WorkView = Backbone.View.extend({
         console.log("Error fetching work model:"+err);
       }
     });
-
   }
 
 });

@@ -1,4 +1,4 @@
-var Work = Backbone.Model.extend({
+var Annotation = Backbone.Model.extend({
 
   urlRoot: '/annotations/',
 

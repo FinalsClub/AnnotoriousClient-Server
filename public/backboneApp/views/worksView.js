@@ -7,7 +7,7 @@ var WorksView = Backbone.View.extend({
   },
 
   addAll: function() {
-    this.collection.forEach(this.addOne, this);
+    this.collection.each(this.addOne, this);
     return this;
   },
 

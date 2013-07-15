@@ -1,6 +1,5 @@
 var express = require('express');
 var path = require('path');
-// var passport = require('passport');
 var stylus = require('stylus');
 var nib = require('nib');
 
@@ -28,7 +27,6 @@ module.exports = function(app) {
   app.use(express.logger('dev'));
   app.set('views', path.join(__dirname, '..', 'views'));
   app.engine('html', require('ejs').renderFile);
-  // app.use(passport.initialize());
   app.use(allowCrossDomain);
   app.use(express.bodyParser());
   app.use(express.cookieParser('SecretAgentShakespeare'));
@@ -47,7 +45,6 @@ module.exports = function(app) {
   }));
   app.use(express.static(path.join(__dirname, '..', 'public')));
 
-  // Development configuration, disabled
   if (app.get('env') === 'development') {
     app.set('db', 'mongodb://localhost:27017/open_shakespeare');
     app.use(express.errorHandler());
