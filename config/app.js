@@ -47,9 +47,9 @@ module.exports = function(app) {
   }));
   app.use(express.static(path.join(__dirname, '..', 'public')));
 
-  // Development configuration
+  // Development configuration, disabled
   if (app.get('env') === 'development') {
-    app.set('db', 'open_shakespeare');
+    app.set('db', 'mongodb://localhost:27017/open_shakespeare');
     app.use(express.errorHandler());
   }
   else if (app.get('env') === 'production') {
