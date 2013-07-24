@@ -1,5 +1,4 @@
-// When the page loads, setup annotation
-$(function() {
+var DoAnnotations = function() {
   var $el = $(document.body).annotator();
 
   $el.annotator('addPlugin', 'Store', {
@@ -28,4 +27,5 @@ $(function() {
       'limit': 1000,
     }
   });
-});
+};
+

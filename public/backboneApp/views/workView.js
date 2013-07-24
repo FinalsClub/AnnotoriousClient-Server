@@ -19,6 +19,7 @@ var WorkView = Backbone.View.extend({
       success: function(model, response, options) {
         $('#play-nav a[data-id='+self.model.id+']').addClass('selected').siblings().removeClass('selected');
         self.$el.html(self.templateWork(model.toJSON()));
+        DoAnnotations();
       },
 
       error: function(err) {

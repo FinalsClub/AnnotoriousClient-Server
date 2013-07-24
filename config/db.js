@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 module.exports = function(app) {
   // Connect to the database
-  mongoose.connect(app.get('db'), function (err, res) {
+  mongoose.connect(process.env.MONGOLAB_URI, function (err, res) {
     if (err) { 
     console.log ('ERROR connecting to: ' + app.get('db') + '. ' + err);
     } else {
