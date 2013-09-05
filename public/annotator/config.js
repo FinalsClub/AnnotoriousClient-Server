@@ -10,6 +10,8 @@ var DoAnnotations = function() {
       destroy: '/annotations/:id',
       search:  '/annotations/search'
     },
+    
+    // TODO
 
     // The endpoint of the store on your server.
     prefix: '',
