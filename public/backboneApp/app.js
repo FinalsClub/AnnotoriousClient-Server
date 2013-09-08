@@ -8,7 +8,6 @@ var AppView = Backbone.View.extend({
 
   loadLibrary: function () {
     var self = this;
-
     this.works = new Works();
     this.works.fetch({
       //renders text list
