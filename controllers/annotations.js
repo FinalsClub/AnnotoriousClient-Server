@@ -13,6 +13,7 @@ module.exports = {
 
     query.exec(function (err, annotations) {
       if (!err) {
+        console.log(annotations);
         return res.send({'rows': annotations });
       }
       else {
