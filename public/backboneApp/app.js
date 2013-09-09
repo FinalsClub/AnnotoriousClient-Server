@@ -2,11 +2,15 @@
 var AppView = Backbone.View.extend({
 
   start: function() {
-    var self = this;
+    this.router = new Router();
+    Backbone.history.start();
+  },
 
+  loadLibrary: function () {
+    var self = this;
     this.works = new Works();
     this.works.fetch({
-      //renders side nav-bar
+      //renders text list
       success: function(){
         self.worksView = new WorksView({
           collection: self.works,
@@ -17,13 +21,16 @@ var AppView = Backbone.View.extend({
       },
       error: function(rsp) { console.log('Error:',rsp); }
     });
+  },
 
+  loadText: function (urititle) {
     this.workView = new WorkView({
       el: '#container'
     });
-
-    this.router = new Router();
-    Backbone.history.start();
+    this.workView.model = new Work({
+      'uri': urititle
+    });
+    this.workView.render();
   }
 
 });
