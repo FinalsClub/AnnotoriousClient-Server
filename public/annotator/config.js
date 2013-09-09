@@ -1,5 +1,6 @@
-var DoAnnotations = function() {
-  var $el = $(document.body).annotator();
+var DoAnnotations = function(el) {
+
+  var $el = $(el).annotator();
 
   $el.annotator('addPlugin', 'Store', {
     urls: {
