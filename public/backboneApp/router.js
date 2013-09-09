@@ -1,18 +1,21 @@
 
 var Router = Backbone.Router.extend({
 
-  routes: {
+  routes: { 
     "": "index",
-    "works/:urititle(/)" : "show"
-    // "*path" : "notFound"
+    "works/:urititle(/)" : "show",
+    "*path" : "notFound"
   },
 
   index: function() {
-    appView.loadLibrary();
+    this.navigate('index');
   },
 
   show: function(urititle) {
-    appView.loadText(urititle);
+    appView.workView.model = new Work({
+      'uri': urititle
+    });
+    appView.workView.render();
   },
 
   notFound: function() {

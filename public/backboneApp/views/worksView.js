@@ -1,15 +1,5 @@
 var WorksView = Backbone.View.extend({
-
-  template: Handlebars.compile(
-    '<div class="row gray-background">' +
-      '<div class="large-12 columns">' +
-        '<div class="row">' +
-          '<div id="documents" class="large-8 large-offset-2 columns document-list">'+
-
-          '</div>' +
-        '</div>' +
-      '</div>' +
-    '</div>'),
+  tagName: 'nav',
 
   render: function() {
     this.addAll();
@@ -17,7 +7,6 @@ var WorksView = Backbone.View.extend({
   },
 
   addAll: function() {
-    this.$el.html(this.template());
     this.collection.each(this.addOne, this);
     return this;
   },
@@ -25,7 +14,7 @@ var WorksView = Backbone.View.extend({
   addOne: function(work){
     var workView = new WorkNavView({model: work});
     var titleViewInstance = workView.renderTitle().el;
-    $('#documents').append(titleViewInstance);
+    this.$el.append(titleViewInstance);
     return this;
   }
 });
