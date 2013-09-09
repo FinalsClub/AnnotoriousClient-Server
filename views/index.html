@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <!-- styles -->
-    <link href="a.css" rel="stylesheet">
+    <!-- <link href="a.css" rel="stylesheet"> -->
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700|Cinzel+Decorative:900' rel='stylesheet'>
     <link rel='stylesheet' type='text/css' href="/styles/foundation.min.css">
     <link href="lib/annotator.min.css" rel="stylesheet">
@@ -43,12 +43,12 @@
         </div>
         <div class="row">
           <div class="small-8 columns">
-            <h5 class="section-title-1">MY DOCUMENTS</h5>
+            <h5 class="section-title-1">DOCUMENTS</h5>
           </div>
 
-          <div class="small-4 columns add-button-included">
+          <!-- <div class="small-4 columns add-button-included">
             <a href="#"><p><img src="img/plus_sign_22px.png"></p></a>
-          </div>
+          </div> -->
         </div>
       </nav>
 
@@ -56,11 +56,13 @@
 
     <!--END top nav-->
 
-    <nav id="play-nav" class="side">
-    </nav>
+    <div class="row gray-background">
+      <div class="large-12 columns top-gap">
+      </div>
+    </div>
 
-      <!-- content -->
-    <div id='content'>
+
+    <div id="container">
     </div>
 
     <footer>
@@ -68,10 +70,13 @@
     </footer>
 
     <script>
-      document.write('<script src=' +
-      ('__proto__' in {} ? '/lib/zepto' : 'lib/jquery') +
-      '.js><\/script>')
+    //   document.write('<script src=' +
+    //   ('__proto__' in {} ? '/lib/zepto' : 'lib/jquery') +
+    //   '.js><\/script>')
     </script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
     <script src="/lib/underscore.js"></script>
     <script src="/lib/backbone.js"></script>
     <script src="/lib/handlebars.js"></script>

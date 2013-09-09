@@ -10,16 +10,16 @@ var AppView = Backbone.View.extend({
       success: function(){
         self.worksView = new WorksView({
           collection: self.works,
-          el: $('#play-nav')
+          el: $('#container')
         });
-        
+
         self.worksView.render();
       },
       error: function(rsp) { console.log('Error:',rsp); }
     });
 
     this.workView = new WorkView({
-      el: '#content'
+      el: '#container'
     });
 
     this.router = new Router();
