@@ -2,6 +2,11 @@ var Work = Backbone.Model.extend({
 
   urlRoot: '/works/',
 
-  idAttribute: 'uri'
+  idAttribute: 'uri',
+
+  updateUri: function (uri) {
+    this.set('uri', uri);
+    this.set('uriTitle', uri);
+  }
 
 });

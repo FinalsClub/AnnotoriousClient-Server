@@ -1,7 +1,7 @@
 
 var Router = Backbone.Router.extend({
 
-  routes: { 
+  routes: {
     "": "index",
     "works/:urititle(/)" : "show",
     "*path" : "notFound"
@@ -12,10 +12,7 @@ var Router = Backbone.Router.extend({
   },
 
   show: function(urititle) {
-    appView.workView.model = new Work({
-      'uri': urititle
-    });
-    appView.workView.render();
+    appView.displayWork(urititle);
   },
 
   notFound: function() {
