@@ -2,28 +2,26 @@
 var AppView = Backbone.View.extend({
 
   start: function() {
+    this.router = new Router();
+    Backbone.history.start();
+  },
+
+  displayWorks: function () {
     var self = this;
 
     this.works = new Works();
     this.works.fetch({
       //renders side nav-bar
-      success: function(){
+      success: function(collection){
         self.worksView = new WorksView({
-          collection: self.works,
-          el: $('#play-nav')
+          collection: collection,
+          el: '#content'
         });
 
         self.worksView.render();
       },
       error: function(rsp) { console.log('Error:',rsp); }
     });
-
-    // this.workView = new WorkView({
-    //   el: '#content'
-    // });
-
-    this.router = new Router();
-    Backbone.history.start();
   },
 
   displayWork: function(urititle) {

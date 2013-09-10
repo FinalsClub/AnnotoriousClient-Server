@@ -54,7 +54,7 @@ var WorkView = Backbone.View.extend({
     var self = this;
     this.model.fetch({
       success: function(model, response, options) {
-        $('#play-nav a[data-id='+self.model.id+']').addClass('selected').siblings().removeClass('selected');
+        // $('#play-nav a[data-id='+self.model.id+']').addClass('selected').siblings().removeClass('selected');
         self.$el.html(self.templateWork(model.toJSON()));
         self.loadAnnotations();
       },

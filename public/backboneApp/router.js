@@ -8,7 +8,7 @@ var Router = Backbone.Router.extend({
   },
 
   index: function() {
-    this.navigate('index');
+    appView.displayWorks();
   },
 
   show: function(urititle) {
