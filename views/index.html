@@ -21,21 +21,56 @@
 
   <body>
     <header class="top">
+  <!--BEGIN top nav-->
 
-      <div class="logo">Annotorious</div>
+      <div class="fixed contain-to-grid top-bar-background">
 
-      <a href="/auth/google" class="button signIn">Sign In with Google</a>
+           <nav class="top-bar top-bar-background">
+              <ul class="title-area">
+                <!-- Title Area -->
+
+                <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                  <li class="toggle-topbar"><a href="#"><span></span></a></li>
+                </ul>
+
+            <div class="row">
+              <div class="small-12 columns">
+                <a href="#" class="small button expand back-button-1">&#x25C0;&nbsp;PROFILE</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="small-8 columns">
+                <h5 class="section-title-1">MY DOCUMENTS</h5>
+              </div>
+
+              <div class="small-4 columns add-button-included">
+                <a href="#"><p><img src="img/plus_sign_22px.png"></p></a>
+              </div>
+            </div>
+          </nav>
+
+        </div>
 
     </header>
 
-
-      <!-- content -->
+    <!-- content -->
     <div id='content'>
     </div>
-    <footer>
-      <p>&copy; Annotorious 2013</p>
-    </footer>
 
+   <!-- Footer -->
+    <footer class="bottom-bar-background bottom-bar-top-shadow">
+      <div class="row bottom-bar-background">
+          <div class="large-12 columns">
+        <ul class="button-group even-5 expanded bottom-button-lineup">
+          <li><a href="#" class="tiny button bottom-button-1"><img src="img/marks_icon_off_36px.png"><br><br>MARKS</a></li>
+          <li><a href="#" class="tiny button bottom-button-1"><img src="img/library_icon_on_36px.png"><br><br>DOCS</a></li>
+          <li><a href="#" class="tiny button bottom-button-1"><img src="img/folders_icon_off_36px.png"><br><br>FOLDERS</a></li>
+          <li><a href="#" class="tiny button bottom-button-1"><img src="img/groups_icon_off_36px.png"><br><br>GROUPS</a></li>
+          <li><a href="#" class="tiny button bottom-button-1"><img src="img/search_icon_off_36px.png"><br><br>SEARCH</a></li>
+        </ul>
+          </div>
+      </div>
+    </footer>
 
     <script src="/lib/foundation.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
