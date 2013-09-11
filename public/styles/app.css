@@ -1,6 +1,6 @@
 /* Artfully masterminded by ZURB  */
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
    Table of Contents
 -----------------------------------------------------
 :: Shared Styles
@@ -50,7 +50,7 @@ footer {
 }
 
 .contain-to-grid .top-bar {
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
 
 .button-group .expanded {
@@ -63,9 +63,9 @@ footer {
   .contain-to-grid .top-bar {
 
     margin-bottom: 1.2em; }
-    
+
     }
-    
+
 @media only screen and (min-width: 10em) {
 	.top-bar {
 		overflow: visible;
@@ -108,7 +108,7 @@ footer {
 	background:rgba(255, 186, 0, .43);
 	margin-top: 5em;
 	margin-bottom: 1em;
-	
+
 }
 
 #annotorious-logo-text {
@@ -156,7 +156,7 @@ footer {
 	border-top-right-radius:7px;
 	border:none;
 	margin-bottom: 1px;
-	
+
 }
 
 .un-pw-formfield {
@@ -218,7 +218,7 @@ footer {
 	border-right-width: thin;
 	border-right-style: solid;
 	padding-top: .75em;
-	
+
 }
 
 #create {
@@ -253,7 +253,7 @@ footer {
 .back-button-1 {
 	background-color: #ffba00 !important;
 	border: none;
-	border-style: none;	
+	border-style: none;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	font-family: 'roboto_condensedregular', 'Arial Narrow', 'Helvetica', Sans-serif;
@@ -268,7 +268,7 @@ footer {
 .bottom-button-1 {
 	background-color: #ffba00 !important;
 	border: none;
-	border-style: none;	
+	border-style: none;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	font-family: 'roboto_condensedlight', 'Arial Narrow', 'Helvetica', Sans-serif;
@@ -429,7 +429,7 @@ footer {
 }
 
 .gray-background {
-	background-color: #e7e7e7;	
+	background-color: #e7e7e7;
 }
 
 .gray-background-night {
@@ -446,13 +446,17 @@ footer {
 }
 
 .document-view-container {
+	display: block;
+	top:70px;
+	position: absolute;
+	padding-left: 1em;
 	padding-top:1.5em;
-	padding-bottom:10em;	
+	padding-bottom:10em;
 }
 
 .highlight-view-container {
 	padding-top:.25em;
-	padding-bottom:1.5em;	
+	padding-bottom:1.5em;
 }
 
 .faded-on-highlight {
@@ -550,7 +554,7 @@ footer {
 	margin-top:0px !important;
 	margin-left:0px;
 	margin-right:0px;
-	margin-bottom:1.25em;	
+	margin-bottom:1.25em;
 	padding-top: 1em;
 	padding-bottom: 1em;
 	padding-left:0em;
@@ -753,7 +757,7 @@ footer {
 	font-weight: normal;
 	color:#000;
 	font-size:0.65em;
-	padding-left: 0 !important;	
+	padding-left: 0 !important;
 }
 
 .edit-detail-note-form {
@@ -766,7 +770,7 @@ footer {
 	font-weight: normal;
 	color:#000;
 	font-size:.85em;
-	padding-left: 0 !important;	
+	padding-left: 0 !important;
 }
 
 .edit-group-form {
@@ -777,7 +781,7 @@ footer {
 	font-weight: normal;
 	color:#000;
 	font-size:1em !important;
-	padding-left: 0 !important;	
+	padding-left: 0 !important;
 }
 
 .profile-form-container {
@@ -865,7 +869,7 @@ footer {
 	background:rgba(255, 186, 0, .43);
 	margin-top: 1em;
 	margin-bottom: 1em !important;
-	
+
 }
 
 .info-screen-headline {
@@ -936,7 +940,7 @@ footer {
 .highlight-note-color-select
 {
   height: 18px;
-  background-color: #FFF; 
+  background-color: #FFF;
   -webkit-border-top-left-radius: 5px 15px;
   -webkit-border-bottom-left-radius: 5px 15px;
   -webkit-border-top-right-radius: 5px 15px;
