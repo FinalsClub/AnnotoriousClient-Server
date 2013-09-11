@@ -1,6 +1,5 @@
-var DoAnnotations = function(el) {
-
-  var $el = $(el).annotator();
+var DoAnnotations = function() {
+  var $el = $(document.body).annotator();
 
   $el.annotator('addPlugin', 'Store', {
     urls: {
@@ -11,10 +10,6 @@ var DoAnnotations = function(el) {
       destroy: '/annotations/:id',
       search:  '/annotations/search'
     },
-    
-    // TODO: Add the Annotator Markdown plugin
-
-    // TODO: Add the Annotator Touch plugin
 
     // The endpoint of the store on your server.
     prefix: '',

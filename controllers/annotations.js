@@ -4,23 +4,23 @@ var Annotation = mongoose.model('Annotation');
 module.exports = {
 
   api: function (req, res) {
-    var query = Annotation.find({'uri': req.query.uri });
+    var query = Annotation.find({'uri': req.query.uri }); 
     res.send(query);
   },
 
 	search: function(req, res) {
-    var query = Annotation.find({'uri': req.query.uri });
+    var query = Annotation.find({'uri': req.query.uri }); 
 
     query.exec(function (err, annotations) {
-      if (!err) {
+        if (!err) {
         return res.send({'rows': annotations });
-      }
+      } 
       else {
         return console.log(err);
       }
     });
 	},
-
+  
 	findById: function (req, res) {
     return Annotation.findById(req.params._id, function (err, annotation) {
       if (!err) {
@@ -88,7 +88,7 @@ module.exports = {
        return res.send(annotation);
       });
     });
-  },
+  }, 
 
   delete: function(req, res) {
      return Annotation.findById(req.params._id, function (err, annotation) {

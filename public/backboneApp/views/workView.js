@@ -1,9 +1,7 @@
 var WorkView = Backbone.View.extend({
 
-  el: '#container',
-
   events: {
-    // 'click .showAnnotations': 'showAnnotations'
+    // 'click .showAnnotations': 'reload'
   },
 
   templateWork: Handlebars.compile(
@@ -11,21 +9,55 @@ var WorkView = Backbone.View.extend({
     '{{{ html }}}'
   ),
 
-  showAnnotations: function() {
-    if(this.loaded && !this.annotated){
-      this.annotated = true;
-      DoAnnotations(this.el);
+  loadAnnotations: function() {
+    if(!this.$annotations){
+      this.$annotations = $(document.body).annotator();
+
+      this.$annotations.annotator('addPlugin', 'Store', {
+        urls: {
+          // Specify URLs matching our API endpoints
+          create:  '/annotations',
+          read:    '/annotations/:id',
+          update:  '/annotations/:id',
+          destroy: '/annotations/:id',
+          search:  '/annotations/search'
+        },
+
+        // The endpoint of the store on your server.
+        prefix: '',
+
+        // Attach the uri of the current page to all annotations to allow search.
+        // annotationData: {
+        //   uri: location.pathname+''+location.hash
+        // },
+
+        // This will perform a "search" action rather than "read" when the plugin
+        // loads. Will request the last 20 annotations for the current url.
+        // eg. /store/endpoint/search?limit=20&uri=http://this/document/only
+        loadFromSearch: {
+          uri: location.pathname+''+location.hash,
+          'limit': 1000,
+        }
+      });
+      this.annotator = this.$annotations.data('annotator');
+      console.log(this.annotator);
+    } else {
+      var options = {
+          uri: location.pathname+''+location.hash,
+          'limit': 1000,
+      };
+      this.annotator.plugins.Store.loadAnnotationsFromSearch(options);
+      console.log(this.annotator);
     }
   },
 
   render: function(){
-    this.$el.empty();
     var self = this;
     this.model.fetch({
       success: function(model, response, options) {
-        self.loaded = true;
+        $('#play-nav a[data-id='+self.model.id+']').addClass('selected').siblings().removeClass('selected');
         self.$el.html(self.templateWork(model.toJSON()));
-        self.showAnnotations();
+        self.loadAnnotations();
       },
 
       error: function(err) {
