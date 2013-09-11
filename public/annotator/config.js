@@ -22,7 +22,7 @@ var DoAnnotations = function() {
 
     // Attach the uri of the current page to all annotations to allow search.
     annotationData: {
-      uri: '/#works'+''+location.hash
+      uri: '/#works'+'/'+title
     },
 
     // This will perform a "search" action rather than "read" when the plugin
@@ -31,7 +31,7 @@ var DoAnnotations = function() {
     // /#works/:title
     loadFromSearch: {
       uri: '/#works'+'/'+title,
-      'limit': 1000,
+      'limit': 50,
     }
   })
   .annotator('addPlugin', 'Markdown')

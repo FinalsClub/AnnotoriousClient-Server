@@ -16,6 +16,7 @@ var Annotation = new Schema({
     id: { type: String, required: false },
     user: { type: String, required: false },
     username: { type: String, required: false },
+    absolutePosition: { type: Number},
     text: { type: String, required: false },
     uri: { type: String, required: false },
     quote: { type: String, required: false },

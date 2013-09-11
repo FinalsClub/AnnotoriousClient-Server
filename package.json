@@ -6,6 +6,7 @@
     "start": "node main.js"
   },
   "dependencies": {
+    "underscore":"*",
     "express": "~3.2.5",
     "ejs": "*",
     "mongoose": "~3.6.13",
