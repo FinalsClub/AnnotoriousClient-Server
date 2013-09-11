@@ -14,7 +14,10 @@ module.exports = function(app) {
   app.put('/annotations/:id', annotations.update);
   app.delete('annotations/:id', annotations.delete);
 
+  app.get('/worksView/:title', works.render);
   app.get('/works', works.list);
   app.get('/works/:title', works.findByTitle);
+
+  // remove this from production before launch
   app.post('/works/:id', works.addWork);
 };

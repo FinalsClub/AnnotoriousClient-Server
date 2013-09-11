@@ -2,7 +2,7 @@ var WorkNavView = Backbone.View.extend({
   tagName: 'a',
 
   template: Handlebars.compile(
-    '<a href="#works/{{{uri}}}" class="button secondary expand document-button-1">' +
+    '<a href="worksView/{{{uri}}}" class="button secondary expand document-button-1">' +
       '{{{title}}}&nbsp;&nbsp;<div class="arrow-on-button">' +
         '<b>&#8250;</b>' +
       '</div>' +

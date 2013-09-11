@@ -17,7 +17,7 @@ var WorkView = Backbone.View.extend({
         urls: {
           // Specify URLs matching our API endpoints
           create:  '/annotations',
-          read:    '/annotations/:id',
+          readx:    '/annotations/:id',
           update:  '/annotations/:id',
           destroy: '/annotations/:id',
           search:  '/annotations/search'

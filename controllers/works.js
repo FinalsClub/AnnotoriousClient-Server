@@ -21,3 +21,15 @@ module.exports.findByTitle = function(req, res) {
 module.exports.addWork = function(req, res) {
   res.send("I guess Shakespeare is still at it despite the odds! Sorry, you cannot add your own literature at this time");
 };
+
+module.exports.render = function(req, res) {
+  var query = Play.findOne({"uriTitle": req.params.title}, 'uriTitle html')
+  query.exec(function(err, resp) {
+    if(err){
+      console.log(err);
+    } else {
+      res.render('work.ejs', resp);
+    }
+  })
+};
+
