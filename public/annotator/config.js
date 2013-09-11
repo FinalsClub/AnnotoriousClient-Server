@@ -33,7 +33,8 @@ var DoAnnotations = function() {
       uri: '/#works'+'/'+title,
       'limit': 1000,
     }
-  });
+  })
+  .annotator('addPlugin', 'Markdown');
 };
 
 DoAnnotations();
