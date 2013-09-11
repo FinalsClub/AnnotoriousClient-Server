@@ -34,7 +34,8 @@ var DoAnnotations = function() {
       'limit': 1000,
     }
   })
-  .annotator('addPlugin', 'Markdown');
+  .annotator('addPlugin', 'Markdown')
+  .annotator('addPlugin', 'Touch');
 };
 
 DoAnnotations();
