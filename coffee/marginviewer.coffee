@@ -22,7 +22,7 @@ class Annotator.Plugin.MarginViewerObjectStore
       for index in [0..@data.length-1]
         obj=@data[index][1]
         obj[@indexfield]=index
-  
+
   getMarginObjects: -> @data.map((x) -> x[1])
 
   updateObjectLocation: (obj) ->
@@ -38,18 +38,18 @@ class Annotator.Plugin.MarginViewerObjectStore
     if (@indexfield of obj1) and (@indexfield of obj2)
       return obj1[@indexfield] is obj2[@indexfield]
     return false
-    
-  getObjectLocation: (obj) -> 
+
+  getObjectLocation: (obj) ->
     supposedLocation = obj[@indexfield]
     # object is at its internally stored location
     if supposedLocation<@data.length and @objectEquals(@data[supposedLocation][1],obj)
       return supposedLocation
     minimumIndex=Math.max(0,supposedLocation-@deletions)
-    maximumIndex=Math.min(@data.length-1,supposedLocation+@insertions) 
+    maximumIndex=Math.min(@data.length-1,supposedLocation+@insertions)
     for index in [minimumIndex..maximumIndex]
       currentObject = @data[index][1]
       if @objectEquals(currentObject,obj)
-        currentObject[@indexField]=index 
+        currentObject[@indexField]=index
         return index
     return -1
 
@@ -140,7 +140,7 @@ class Annotator.Plugin.MarginViewerObjectStore
     @data.splice(newObjectLocation,0,@funcObject.mapFunc(obj))
     obj[@indexfield]=newObjectLocation
     @insertions+=1
-    
+
   deleteObject : (object) ->
     objectLocation=@getObjectLocation(object)
     @data.splice(objectLocation,1)
@@ -163,10 +163,10 @@ class Annotator.Plugin.MarginViewer extends Annotator.Plugin
     # TODO: get id of div for margin objects from options
 
   events:
-    'annotationsLoaded':    'onAnnotationsLoaded'      
-    'annotationCreated':    'onAnnotationCreated'      
-    'annotationDeleted':    'onAnnotationDeleted'      
-    'annotationUpdated':    'onAnnotationUpdated'      
+    'annotationsLoaded':    'onAnnotationsLoaded'
+    'annotationCreated':    'onAnnotationCreated'
+    'annotationDeleted':    'onAnnotationDeleted'
+    'annotationUpdated':    'onAnnotationUpdated'
     '.annotator-hl click':  'onAnnotationSelected'
 
   pluginInit: ->
@@ -177,7 +177,7 @@ class Annotator.Plugin.MarginViewer extends Annotator.Plugin
       load: (annotations) => @highlightMargin(annotations)
       isShown: ->
       addField: ->
-      element: 
+      element:
         position: ->
         css: ->
     @highlightedObjects = []
@@ -192,13 +192,13 @@ class Annotator.Plugin.MarginViewer extends Annotator.Plugin
     @funcObject =
       sortDataMap: (annotation) ->
         dbg = {top:$(annotation.highlights[0]).offset().top,left:$(annotation.highlights[0]).offset().left}
-        return dbg 
-      sortComparison : (left,right) -> 
-        return sign(sign(left.top - right.top)*2 + sign(left.left - right.left)*RTL_MULT) 
+        return dbg
+      sortComparison : (left,right) ->
+        return sign(sign(left.top - right.top)*2 + sign(left.left - right.left)*RTL_MULT)
       idFunction : (annotation) -> annotation.id
       sizeFunction : (element) -> element.outerHeight(true)
     @marginData = new Annotator.Plugin.MarginViewerObjectStore [],@funcObject
-    
+
   onAnnotationsLoaded: (annotations) ->
     @marginData = new Annotator.Plugin.MarginViewerObjectStore annotations,@funcObject
     if annotations.length>0
@@ -235,7 +235,7 @@ class Annotator.Plugin.MarginViewer extends Annotator.Plugin
           selectIndex=(i+1)%annotations.length
           break
     @onMarginSelected(annotations[selectIndex]._marginObject)
- 
+
   onAnnotationDeleted: (annotation) ->
     nextObject = @marginData.getNextObject(annotation)
     @marginData.deleteObject(annotation)
@@ -342,7 +342,7 @@ class Annotator.Plugin.MarginViewer extends Annotator.Plugin
             found=true
         if not found
           oldObjects.push(existingHighlight)
-      @hideHighlightedMargin oldObjects 
+      @hideHighlightedMargin oldObjects
     @highlightedObjects=annotations
     marginObjects=jQuery.map(annotations,(val,i)->val._marginObject)
     $(marginObjects).addClass("annotator-marginviewer-highlighted")
