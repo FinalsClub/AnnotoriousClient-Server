@@ -36,6 +36,7 @@ var DoAnnotations = function() {
   })
   .annotator('addPlugin', 'Markdown')
   .annotator('addPlugin', 'Touch');
+  return $el.data('annotator');
 };
 
-DoAnnotations();
+loadOnScreenAnnotations(DoAnnotations());

@@ -4,10 +4,6 @@ var WorkView = Backbone.View.extend({
     // 'click .showAnnotations': 'reload'
   },
 
-  templateWork: Handlebars.compile(
-    // '<button class="button showAnnotations">Show Annotations</button>' +
-    '{{{ html }}}'
-  ),
 
   loadAnnotations: function() {
     if(!this.$annotations){
