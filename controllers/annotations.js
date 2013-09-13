@@ -9,7 +9,17 @@ module.exports = {
   },
 
 	search: function(req, res) {
-    var query = Annotation.find({'uri': req.query.uri }).limit(req.query.limit).sort({absolutePosition: 1});
+    if(req.query.end){
+      var query = Annotation.find({
+        'uri': req.query.uri,
+        // 'absolutePosition': {$gte: req.query.start},
+        'absolutePosition': {$lte: req.query.end}
+      })
+      .limit(req.query.limit)
+      .sort({absolutePosition: 1});
+    } else {
+      var query = Annotation.find({'uri': req.query.uri }).limit(req.query.limit).sort({absolutePosition: 1});
+    }
 
     query.exec(function (err, annotations) {
         if (!err) {

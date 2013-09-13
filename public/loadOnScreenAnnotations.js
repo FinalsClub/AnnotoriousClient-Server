@@ -1,8 +1,7 @@
-var loadOnScreenAnnotations = function (annotator){
+var loadOnScreenAnnotations = function (annotate){
   var topDiv = 0;
   var prevTop = topDiv;
   var bottomDiv;
-  var preBottom
   var text = $('#content').children();
   var lastScrollTop = 0;
 
@@ -61,21 +60,25 @@ var loadOnScreenAnnotations = function (annotator){
     }
   };
 
+  var load = function(){
+    var options = {
+      'uri': annotate.uri,
+      'limit': 1000,
+      // 'start': topDiv,
+      'end': bottomDiv + 20
+    };
+    annotate.annotator.plugins.Store.dumpAnnotations();
+    annotate.annotator.plugins.Store.loadAnnotationsFromSearch(options);
+    console.log('logging', annotate.annotator);
+  };
+
+  var debLoad = _.debounce(load, 500);
+
   setBottom();
 
   $(window).scroll(function(event){
-    console.log(topDiv, bottomDiv);
     setBottom();
     setTop();
-    // var st = $(this).scrollTop();
-    // var prev;
-    // if (st > lastScrollTop){
-    //   // downscroll
-    //   setBottom();
-    // } else {
-    //   // upscroll
-    //   setTop();
-    // }
-    // lastScrollTop = st;
+    debLoad();
   });
 };

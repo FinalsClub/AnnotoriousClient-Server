@@ -4,8 +4,8 @@ var DoAnnotations = function() {
   console.log(loc);
   title = loc[2];
 
-
   var $el = $(document.body).annotator();
+  debugger;
 
   $el.annotator('addPlugin', 'Store', {
     urls: {
@@ -30,13 +30,19 @@ var DoAnnotations = function() {
     // eg. /store/endpoint/search?limit=20&uri=http://this/document/only
     // /#works/:title
     loadFromSearch: {
-      uri: '/#works'+'/'+title,
-      'limit': 50,
+      'uri': '/#works'+'/'+title,
+      'limit': 1000,
+      'start': 0,
+      'end' : 50
     }
   })
   .annotator('addPlugin', 'Markdown')
-  .annotator('addPlugin', 'Touch');
-  return $el.data('annotator');
+  .annotator('addPlugin', 'Touch')
+  .annotator('addPlugin', 'MarginViewerObjectStore');
+  return {
+    annotator: $el.data('annotator'),
+    uri: '/#works'+'/'+title
+  };
 };
 
 loadOnScreenAnnotations(DoAnnotations());
