@@ -4,8 +4,7 @@ var DoAnnotations = function() {
   console.log(loc);
   title = loc[2];
 
-  var $el = $(document.body).annotator();
-  debugger;
+  var $el = $('#content').annotator();
 
   $el.annotator('addPlugin', 'Store', {
     urls: {
@@ -37,12 +36,14 @@ var DoAnnotations = function() {
     }
   })
   .annotator('addPlugin', 'Markdown')
-  .annotator('addPlugin', 'Touch')
-  .annotator('addPlugin', 'MarginViewerObjectStore');
-  return {
-    annotator: $el.data('annotator'),
-    uri: '/#works'+'/'+title
-  };
+  // .annotator('addPlugin', 'MarginViewerObjectStore')
+  .annotator('addPlugin', 'Touch');
+  // return {
+  //   annotator: $el.data('annotator'),
+  //   uri: '/#works'+'/'+title
+  // };
 };
 
-loadOnScreenAnnotations(DoAnnotations());
+DoAnnotations();
+
+//loadOnScreenAnnotations(DoAnnotations());

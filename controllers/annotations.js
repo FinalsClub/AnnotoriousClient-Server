@@ -22,7 +22,8 @@ module.exports = {
     }
 
     query.exec(function (err, annotations) {
-        if (!err) {
+      if (!err) {
+        console.log(annotations.length);
         return res.send({'rows': annotations });
       }
       else {
