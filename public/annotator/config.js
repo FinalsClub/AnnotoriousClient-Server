@@ -37,7 +37,9 @@ var DoAnnotations = function() {
   })
   .annotator('addPlugin', 'Markdown')
   // .annotator('addPlugin', 'MarginViewerObjectStore')
-  .annotator('addPlugin', 'Touch');
+  .annotator('addPlugin', 'Touch', {
+    force: true
+  });
   // return {
   //   annotator: $el.data('annotator'),
   //   uri: '/#works'+'/'+title

@@ -184,6 +184,9 @@ class Annotator.Plugin.Touch extends Annotator.Plugin
   # annotation - An annotation object to load into the Editor.
   #
   # Returns itself.
+  #############
+  #### TODO Should make our editor slide in
+  ##############
   showEditor: (annotation) ->
     @annotator.showEditor(annotation, {})
     @hideControls()
@@ -192,6 +195,9 @@ class Annotator.Plugin.Touch extends Annotator.Plugin
   # Public: Displays the touch controls.
   #
   # Returns itself.
+  #########################################
+  #####TODO ADD SLIDE HERE INSTEAD OF HIDE######
+  #########################################
   showControls: ->
     @controls.removeClass(@classes.hide)
     this
@@ -199,6 +205,9 @@ class Annotator.Plugin.Touch extends Annotator.Plugin
   # Public: Hides the touch controls.
   #
   # Returns itself.
+  #########################################
+  #####TODO ADD SLIDE HERE INSTEAD OF HIDE######
+  #########################################
   hideControls: ->
     @controls.addClass(@classes.hide) unless @options.useHighlighter
     this
@@ -224,6 +233,7 @@ class Annotator.Plugin.Touch extends Annotator.Plugin
   # adder. Should only be called in the @pluginInit() method.
   #
   # Returns nothing.
+
   _setupControls: ->
     @annotator.adder.remove()
 

@@ -21,6 +21,17 @@ class Annotator.Plugin.Touch.Viewer extends Annotator.Delegator
   constructor: (@viewer, options) ->
     super @viewer.element[0], options
 
+    @viewer.show = (event) =>
+      event.preventDefault();
+      console.log(event);
+
+    @viewer.hide = (event) =>
+      event.preventDefault();
+      console.log(event);
+
+    @element.removeClass('annotator-hide');
+    @element.addClass('myredtest');
+
     @element.unbind("click")
     @element.addClass("annotator-touch-widget annotator-touch-viewer")
 
