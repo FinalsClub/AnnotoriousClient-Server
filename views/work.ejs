@@ -17,10 +17,13 @@
     <script src="/lib/custom.modernizr.js"></script>
     <link rel="stylesheet" href="/styles/foundation.css">
     <link rel="stylesheet" href="/styles/app.css">
+    <link rel="stylesheet" href="/styles/offcanvas.css">
+
+
 
   </head>
 
-  <body>
+  <body id="page" class="off-canvas hide-extras">
     <header class="top">
   <!--BEGIN top nav-->
 
@@ -53,14 +56,10 @@
         </div>
 
     </header>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
 
     <!-- content -->
     <div id='content'>
-      <div class='content gray-background body-text-document document-view-container'>
+      <div class='content gray-background body-text-document document-view-container' role='main'>
         <%-html%>
       </div>
     </div>
