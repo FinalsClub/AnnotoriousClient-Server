@@ -199,6 +199,7 @@ class Annotator.Plugin.Touch extends Annotator.Plugin
   #####TODO ADD SLIDE HERE INSTEAD OF HIDE######
   #########################################
   showControls: ->
+    console.log('showControls');
     @controls.removeClass(@classes.hide)
     this
 
@@ -209,12 +210,13 @@ class Annotator.Plugin.Touch extends Annotator.Plugin
   #####TODO ADD SLIDE HERE INSTEAD OF HIDE######
   #########################################
   hideControls: ->
+    console.log('hideControls');
     @controls.addClass(@classes.hide) unless @options.useHighlighter
     this
 
   # Event handler for mouse click release
   _palateMouseUp: (e) ->
-    console.log('halp potato')
+    console.log('_palateMouseUp', @palate);
     jQuery(@palate).hide()
 
   # Event handler for mouse click
@@ -447,6 +449,7 @@ class Annotator.Plugin.Touch extends Annotator.Plugin
   #
   # Returns nothing.
   _onDocumentTap: (event) =>
+    console.log('_onDocumentTap')
     unless @annotator.isAnnotator(event.target)
       @annotator.viewer.hide()
     @document.unbind("tap", @_onDocumentTap) unless @annotator.viewer.isShown()

@@ -31,6 +31,7 @@ jQuery.event.special.tap =
     context = this
 
     onTapStart = (event) ->
+      console.log('onTapStart');
       event.preventDefault() unless data.preventDefault is false
       data.onTapDown.apply(this, arguments) if data.onTapDown
 
@@ -41,6 +42,7 @@ jQuery.event.special.tap =
       jQuery(document).bind(touchend: onTapEnd, mouseup: onTapEnd)
 
     onTapEnd = (event) ->
+      console.log('onTapEnd');
       if data.touched?
         clearTimeout(data.touched)
         if event.target is context or jQuery.contains(context, event.target)

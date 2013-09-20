@@ -117,11 +117,13 @@ Annotator.Plugin.Touch = (function(_super) {
   };
 
   Touch.prototype.showControls = function() {
+    console.log('showControls');
     this.controls.removeClass(this.classes.hide);
     return this;
   };
 
   Touch.prototype.hideControls = function() {
+    console.log('hideControls');
     if (!this.options.useHighlighter) {
       this.controls.addClass(this.classes.hide);
     }
@@ -129,7 +131,7 @@ Annotator.Plugin.Touch = (function(_super) {
   };
 
   Touch.prototype._palateMouseUp = function(e) {
-    console.log('halp potato');
+    console.log('_palateMouseUp', this.palate);
     return jQuery(this.palate).hide();
   };
 
@@ -322,6 +324,7 @@ Annotator.Plugin.Touch = (function(_super) {
   };
 
   Touch.prototype._onDocumentTap = function(event) {
+    console.log('_onDocumentTap');
     if (!this.annotator.isAnnotator(event.target)) {
       this.annotator.viewer.hide();
     }

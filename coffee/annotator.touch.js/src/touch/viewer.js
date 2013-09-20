@@ -17,20 +17,12 @@ Annotator.Plugin.Touch.Viewer = (function(_super) {
   };
 
   function Viewer(viewer, options) {
-    var _this = this;
     this.viewer = viewer;
     this._onLoad = __bind(this._onLoad, this);
     Viewer.__super__.constructor.call(this, this.viewer.element[0], options);
-    this.viewer.show = function(event) {
-      event.preventDefault();
-      return console.log(event);
-    };
-    this.viewer.hide = function(event) {
-      event.preventDefault();
-      return console.log(event);
-    };
-    this.element.removeClass('annotator-hide');
-    this.element.addClass('myredtest');
+    this.element.addClass('row gray-background');
+    this.element.attr('role', 'complimentary');
+    this.element.attr('id', 'sidebar');
     this.element.unbind("click");
     this.element.addClass("annotator-touch-widget annotator-touch-viewer");
     this.on("load", this._onLoad);
@@ -50,6 +42,7 @@ Annotator.Plugin.Touch.Viewer = (function(_super) {
 
   Viewer.prototype._onTap = function(event) {
     var isVisible, target;
+    console.log('onTap');
     target = jQuery(event.currentTarget);
     isVisible = target.hasClass(this.viewer.classes.showControls);
     this.hideAllControls();

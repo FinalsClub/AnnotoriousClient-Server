@@ -21,16 +21,11 @@ class Annotator.Plugin.Touch.Viewer extends Annotator.Delegator
   constructor: (@viewer, options) ->
     super @viewer.element[0], options
 
-    @viewer.show = (event) =>
-      event.preventDefault();
-      console.log(event);
+    # @element.removeClass('annotator-hide');
 
-    @viewer.hide = (event) =>
-      event.preventDefault();
-      console.log(event);
-
-    @element.removeClass('annotator-hide');
-    @element.addClass('myredtest');
+    @element.addClass('row gray-background');
+    @element.attr('role', 'complimentary');
+    @element.attr('id', 'sidebar');
 
     @element.unbind("click")
     @element.addClass("annotator-touch-widget annotator-touch-viewer")
@@ -49,6 +44,39 @@ class Annotator.Plugin.Touch.Viewer extends Annotator.Delegator
     @element.find(".annotator-item").removeClass(@viewer.classes.showControls)
     this
 
+
+  # my off canvas template
+  # offCanvasTemplateInner: """
+  #     <div class="large-12 columns">
+
+  #       <!--BEGIN the text from the document that has been highlighted by the user-->
+  #       <div class="row">
+  #         <div class="large-8 large-offset-2 columns highlight-view-container">
+  #           <p class="highlight-detail-highlighted-text vertical-color-1">{{{quote}}}</p>
+
+  #         </div>
+
+  #       </div>
+
+  #       <!--END the text from the document that has been highlighted by the user-->
+
+  #       <!--BEGIN the text of the annotation-->
+
+  #       <div class="row note-section">
+  #         <div class="large-8 large-offset-2 columns highlight-note-container">
+  #           <p class="note-detail-header">
+  #           NOTE
+  #           </p>
+  #           <p class="highlight-detail-note-text-2">{{{text}}}
+  #           </p>
+  #         </div>
+  #       </div>
+
+  #       <!--END the text of the annotation-->
+
+
+  #     </div>
+  # """
   # Event handler called when a field is loaded. Augments the field with
   # additonal classes and event handlers.
   #
@@ -64,6 +92,7 @@ class Annotator.Plugin.Touch.Viewer extends Annotator.Delegator
   #
   # Returns nothing.
   _onTap: (event) ->
+    console.log('onTap');
     target = jQuery(event.currentTarget)
     isVisible = target.hasClass(@viewer.classes.showControls)
     @hideAllControls()
