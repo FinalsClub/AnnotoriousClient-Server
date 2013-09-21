@@ -15,5 +15,5 @@ nav.top a{display:inline-block;padding:10px;text-decoration:none}
 .side a:hover{background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #ecf6f8), color-stop(1, #d1dbdc));background:-webkit-linear-gradient(top, #ecf6f8 0%, #d1dbdc 100%);background:-moz-linear-gradient(top, #ecf6f8 0%, #d1dbdc 100%);background:-o-linear-gradient(top, #ecf6f8 0%, #d1dbdc 100%);background:-ms-linear-gradient(top, #ecf6f8 0%, #d1dbdc 100%);background:linear-gradient(top, #ecf6f8 0%, #d1dbdc 100%)}
 .side a:last-child{border-bottom-width:0;border-bottom-right-radius:5px}
 .side a.selected{background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #d3e9ee), color-stop(1, #c0cdcf));background:-webkit-linear-gradient(top, #d3e9ee 0%, #c0cdcf 100%);background:-moz-linear-gradient(top, #d3e9ee 0%, #c0cdcf 100%);background:-o-linear-gradient(top, #d3e9ee 0%, #c0cdcf 100%);background:-ms-linear-gradient(top, #d3e9ee 0%, #c0cdcf 100%);background:linear-gradient(top, #d3e9ee 0%, #c0cdcf 100%)}
-#content{height:100%;padding:8px 16px;overflow:hidden}
+/*#content{height:100%;padding:8px 16px;overflow:hidden}*/
 .showAnnotations{float:right}

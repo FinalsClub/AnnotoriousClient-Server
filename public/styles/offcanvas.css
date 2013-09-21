@@ -27,7 +27,7 @@ body.off-canvas { padding: 0; margin: 0; }
 
 [role="navigation"]#topMenu ul { margin-top: 0; }
 
-[role="complementary"] { margin-left: -100%; width: 80%; float: left; z-index: 2; }
+[role="complementary"] { margin-left: -100%; width: 100%; float: left; z-index: 2; }
 
 [role="main"] { margin-left: 0; float: right; z-index: 1; position: relative; }
 
@@ -37,7 +37,7 @@ body.off-canvas { padding: 0; margin: 0; }
 
 .active [role="complementary"] { margin-left: 0; }
 
-.active [role="main"] { margin-right: -80%; }
+.active [role="main"] { margin-right: -100%; display: none; }
 
 .active-menu [role="navigation"]#topMenu { margin-top: 0 !important; }
 
