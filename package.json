@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node main.js"
+    "start": "node main.js",
+    "addAbsolutePosition": "node dataManipulations/updateAnnotations.js"
   },
   "dependencies": {
     "underscore":"*",
@@ -15,19 +16,19 @@
     "nib": "~0.9.2",
     "mongo": "~0.1.0"
   },
-  "gitHead": "8d9a3cb163bd23b14617beacc6bdfbda6fdaaec9",
+  "gitHead": "b515981cf012e752410ba4efc38848f3b29df9f5",
   "description": "Literature Annotator",
   "main": "main.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/bgando/Annotorious.git"
+    "url": "https://github.com/FinalsClub/AnnotoriousClient-Server.git"
   },
   "keywords": [
     "annotator",
     "openshakespeare"
   ],
-  "author": "Bianca Gandolfo",
+  "author": "Walker Flynn",
   "license": "BSD",
   "bugs": {
     "url": "https://github.com/bgando/Annotorious/issues"

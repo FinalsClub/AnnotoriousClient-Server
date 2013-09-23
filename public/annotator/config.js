@@ -30,9 +30,9 @@ var DoAnnotations = function() {
     // /#works/:title
     loadFromSearch: {
       'uri': '/#works'+'/'+title,
-      'limit': 1000,
+      'limit': 25,
       'start': 0,
-      'end' : 50
+      'end' : 30
     }
   })
   .annotator('addPlugin', 'Markdown')
