@@ -23,7 +23,7 @@ module.exports.addWork = function(req, res) {
 };
 
 module.exports.render = function(req, res) {
-  var query = Play.findOne({"uriTitle": req.params.title}, 'uriTitle html')
+  var query = Play.findOne({"uriTitle": req.params.title})
   query.exec(function(err, resp) {
     if(err){
       console.log(err);
